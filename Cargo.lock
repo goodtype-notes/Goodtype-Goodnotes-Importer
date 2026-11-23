@@ -187,7 +187,7 @@ dependencies = [
 [[package]]
 name = "goodtype-core"
 version = "0.1.0"
-source = "git+https://github.com/Just8it/Goodtype.git?rev=a670ba21375065da1e0a0826b28760c2d19623fc#a670ba21375065da1e0a0826b28760c2d19623fc"
+source = "git+https://github.com/goodtype-notes/Goodtype.git?rev=a670ba21375065da1e0a0826b28760c2d19623fc#a670ba21375065da1e0a0826b28760c2d19623fc"
 dependencies = [
  "serde",
  "serde_json",
@@ -196,7 +196,7 @@ dependencies = [
 
 [[package]]
 name = "goodtype-goodnotes-import"
-version = "0.1.1"
+version = "0.1.3"
 dependencies = [
  "base64",
  "goodtype-core",

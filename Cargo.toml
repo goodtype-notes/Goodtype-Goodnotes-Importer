@@ -1,11 +1,11 @@
 [package]
 name = "goodtype-goodnotes-import"
-version = "0.1.1"
+version = "0.1.3"
 edition = "2024"
 license = "Apache-2.0"
 publish = false
 default-run = "goodtype-goodnotes-import"
-repository = "https://github.com/Just8it/Goodtype-Goodnodes-importer"
+repository = "https://github.com/goodtype-notes/Goodtype-Goodnotes-Importer"
 description = "Local Goodnotes notebook and backup conversion into ordinary Goodtype notebooks"
 rust-version = "1.97.1"
 
@@ -13,7 +13,7 @@ rust-version = "1.97.1"
 [workspace]
 
 [dependencies]
-goodtype-core = { git = "https://github.com/Just8it/Goodtype.git", rev = "a670ba21375065da1e0a0826b28760c2d19623fc" }
+goodtype-core = { git = "https://github.com/goodtype-notes/Goodtype.git", rev = "a670ba21375065da1e0a0826b28760c2d19623fc" }
 serde = { version = "1", features = ["derive"] }
 serde_json = { version = "1", features = ["float_roundtrip"] }
 tempfile = "3"

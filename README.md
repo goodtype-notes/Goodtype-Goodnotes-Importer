@@ -15,7 +15,7 @@
 <p align="center">Bring your Goodnotes notebooks into Goodtype. Keep your notes on your own disk.</p>
 
 Convert a `.goodnotes` document or a backup ZIP into ordinary
-[Goodtype](https://github.com/Just8it/Goodtype) notebooks. Folder structure, PDF backgrounds,
+[Goodtype](https://github.com/goodtype-notes/Goodtype) notebooks. Folder structure, PDF backgrounds,
 images and supported handwriting come with them. Open the result in Goodtype and organize it
 with the existing Library.
 
@@ -36,7 +36,7 @@ Nearby fallback marks share small vector objects; distant marks stay independent
 
 ## Use
 
-Download the **Windows x64 ZIP** from [Releases](https://github.com/Just8it/Goodtype-Goodnodes-importer/releases),
+Download the **Windows x64 ZIP** from [Releases](https://github.com/goodtype-notes/Goodtype-Goodnotes-Importer/releases),
 extract it and keep the whole folder together. It includes its own Python runtime.
 
 ```powershell
@@ -60,8 +60,7 @@ cargo xtask verify
 
 The portable folder, ZIP and checksums appear in `dist/`. Dependencies are downloaded during
 setup/build only. [Release integration](./INTEGRATION.md) describes the version contract and
-future app installation boundary. [Development and releases](./RELEASING.md) explains how
-`dev` is promoted to `main`, where GitHub builds and publishes new versions automatically.
+future app installation boundary. [Development and releases](./RELEASING.md) explains tag-based signed releases.
 
 ## License
 

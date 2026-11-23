@@ -1,6 +1,7 @@
 """Build a portable Windows x64 release. Downloads happen only on the build machine."""
 from __future__ import annotations
 
+import os
 import argparse
 import hashlib
 import json
@@ -21,7 +22,7 @@ PYTHON_URL = f"https://www.python.org/ftp/python/{PYTHON_VERSION}/python-{PYTHON
 PYTHON_SHA256 = "a93abe456ab01bd96d7a085b3cdb6566b3063f4241360d114142fbdb07f0a310"
 CORE_REVISION = "a670ba21375065da1e0a0826b28760c2d19623fc"
 DECODER_REVISION = "66028455fd7fc61b7931679915d811a25485e3ad"
-REPOSITORY = "https://github.com/Just8it/Goodtype-Goodnodes-importer"
+REPOSITORY = "https://github.com/" + os.environ.get("GITHUB_REPOSITORY", "goodtype-notes/Goodtype-Goodnotes-Importer")
 
 
 def run(*args):
@@ -150,6 +151,11 @@ def build(output):
                     "target":"x86_64-pc-windows-msvc", "sourceCommit":commit, "sourceDirty":dirty,
                     "goodtypeCoreRevision":CORE_REVISION, "decoderCommit":DECODER_REVISION,
                     "pythonVersion":PYTHON_VERSION, "pythonArchiveSha256":PYTHON_SHA256}
+        addon = ROOT/"goodtype-addon.json"
+        identity = json.loads(addon.read_text(encoding="utf8"))
+        if identity["version"] != version or identity["target"] != metadata["target"]:
+            raise ValueError("addon manifest version or target differs from the package")
+        shutil.copy2(addon, staging/addon.name)
         metadata["files"] = [{"path":p.relative_to(staging).as_posix(), "sizeBytes":p.stat().st_size,
                               "sha256":sha256(p)} for p in sorted(staging.rglob("*")) if p.is_file()]
         (staging/"importer-manifest.json").write_text(json.dumps(metadata, indent=2)+"\n", encoding="utf8")
