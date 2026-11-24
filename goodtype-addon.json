@@ -1,0 +1,32 @@
+{
+  "manifestVersion": 1,
+  "id": "goodnotes",
+  "version": "0.1.3",
+  "apiVersion": "goodtype-api 0.1",
+  "target": "x86_64-pc-windows-msvc",
+  "entrypoint": "goodtype-goodnotes-import.exe",
+  "transport": "legacy-import-cli",
+  "permissions": [
+    "picked-import-file",
+    "publish-import-batch",
+    "derived-import-artwork"
+  ],
+  "commands": [
+    {
+      "id": "import-notebooks",
+      "surface": "library-import",
+      "label": "import-notebooks"
+    }
+  ],
+  "settings": [],
+  "strings": {
+    "en": {
+      "name": "Goodnotes Importer",
+      "import-notebooks": "Import Goodnotes notebooks"
+    },
+    "de": {
+      "name": "Goodnotes-Import",
+      "import-notebooks": "Goodnotes-Notizbücher importieren"
+    }
+  }
+}

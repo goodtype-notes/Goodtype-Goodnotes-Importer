@@ -101,3 +101,5 @@ on every supported physical device. Private notebook samples are never CI fixtur
 the new `Cargo.toml` version after the Windows build and portable smoke check pass. Prerelease
 version suffixes are respected. Existing tags/assets are never replaced. The release manifest
 identifies the exact merged source commit. See [the release workflow](RELEASING.md).
+
+The portable ZIP includes `goodtype-addon.json`, whose version and target match the signed release descriptor.
